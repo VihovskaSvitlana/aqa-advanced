@@ -1,19 +1,7 @@
-/*
-Завдання: Імплементуйте функцію filterGreaterThanValue, яка приймає число minValue та масив з числами numbersList. 
-Функція має повертати новий масив який містить лише числа більші за передане minValue.
-
-*/
 const numbers = [10, 61, 2, 41, 3, 11, -44, 22, 12, 53, 9, 40];
-
-function filterGreaterThanValue1(minValue, numbersList) {
-    let newNumberList = [];
-    for (let i = 0; i < numbersList.length; i++) {
-        if (numbersList[i] > minValue) {
-            newNumberList.push(numbersList[i]);
-        };
-    };
-    return newNumberList;
-};
+const filterGreaterThanValue1 = (minValue, numbers) => numbers.filter((el) => {
+    return el > minValue;
+});
 
 function filterGreaterThanValue2(minValue, numbersList) {
     let newNumberList = [];

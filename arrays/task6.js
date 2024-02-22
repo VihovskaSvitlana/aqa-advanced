@@ -1,18 +1,12 @@
-/*
-Завдання 6: Сортування масивів
-
-У вас є вихідний масив
-
-сonst numbersList = [1,10,14,2,4,5,43,34]
-Створіть новий масив на основі вихідного масиву (копіюйте його)
-Відсортуйте створений масив (від меншого до більшого)
-Виведіть обидва масиви в консоль
-*/
-
 const numbersList = [1, 10, 0, 54, 14, 2, 4, 5, 43, 34];
 const copyNumberList = [...numbersList];
+const copyNumberList2 = numbersList.concat([]);
+const copyNumberList3 = [].concat([...numbersList]);
 
-copyNumberList.sort(function (a, b) { return a - b });
 
-console.log(numbersList);
-console.log(copyNumberList);
+copyNumberList.sort((a, b) => a - b);
+
+console.log("numbersList ", numbersList);
+console.log("copyNumberList2 ", copyNumberList2);
+console.log("copyNumberList3", copyNumberList3);
+console.log("copyNumberList", copyNumberList);
