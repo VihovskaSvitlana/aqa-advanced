@@ -1,6 +1,14 @@
-/*
-Завдання 5
-Створіть масив об'єктів users де обєкти мають довільні властивості (наприклад, name, email, age, тощо).
-Використовуючи цикл for...of, переберіть всі елементи масиву та виведіть їхні значення в консоль.
-Зробіть деструктуризацію в циклі
-*/
+const users = [
+    { name: 'sveta', age: 18, email: 'sveta@gmail.com' },
+    { name: 'viktor', age: 29, email: 'viktor@test.com' },
+    { name: 'test', age: 40, email: 'test@google.com' },
+];
+
+for (let user of users) {
+    console.log(user);
+
+    const { name, age, email : newEmail } = user;
+    console.log("name ", name);
+    console.log("age ", age);
+    console.log("email ", newEmail);
+};

@@ -1,14 +1,9 @@
-/*
-Завдання 2
-Створіть об'єкт book з такими властивостями:
-title: рядок, представляє назву книги.
-author: рядок, представляє автора книги.
-year: число, представляє рік видання книги.
-Деструктуризуйте назву та автора книги з об'єкта book.
-Виведіть деструктуризовані змінні в консоль
-*/
 const book = {
-    title: "History",
-    author: "",
+    title: "The Holy Grail of Investing",
+    author: "Tony Robbins",
     year: 2022
-}
+};
+const {title: newTitle, author} = book;
+
+console.log(newTitle);
+console.log(author);
