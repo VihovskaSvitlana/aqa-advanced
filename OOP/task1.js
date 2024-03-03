@@ -1,15 +1,3 @@
-
-// створити клас нащадок Worker - у якого має бути свій конструктор з оголошенням двох полів salary, work time.
-//  Також має бути два метода який виводить привітання, і каже що робота завершена.
-
-// створити метод який буде виводити в консоль повідомлення чи працює зараз працівник чи ні
-
-// можна використатиDate()
-
-// і в залежності від години виклику методу відображати текст робочі години чи ні
-
-// робочий день з 09:00 до 18:00
-
 class Human {
     constructor() {
         if (this.constructor == Human) {
@@ -20,44 +8,33 @@ class Human {
     listen() { console.log('listening') }
 }
 
-
 class Worker extends Human {
     constructor(salary, workTime) {
-        super()
+        super();
         this.salary = salary;
-        this.work_time = workTime;
-    }
+        this.workTime = workTime;
+    };
+
     greet() {
-        console.log("Hello!")
-    }
+        console.log("Hello!");
+    };
 
     finish() {
-        console.log("Work is finish!")
-    }
+        console.log("Work is finish!");
+    };
 
     isWorking() {
-        const fullTime = Date()
-        const year = new Date().getFullYear();
-        const currentTime = fullTime.split(`${year} `)[1].split(' GMT')[0]
-        const currentDay = fullTime.split(' ')[0]
+        const currentHour = new Date().getHours();
+        const currentDay = new Date().getDay();
 
-        if (currentDay !== 'Sat' && currentDay !== 'Sun') {
-            if (currentTime >= '09:00:00' && currentTime < '18:00:00') { console.log('Now is working time'); }
-            else if (currentTime < '09:00:00') {console.log('Sorry, wow is not working time yet'); }
-            else if (currentTime > '18:00:00') {console.log('Sorry, working day is over'); }
-            else {console.log('Time is incorrect', currentTime);}
+        if (currentDay !== 0 && currentDay !== 6) {
+            if (currentHour >= 9 && currentHour < 18) console.log('Now is working time');
+            if (currentHour < 9) console.log('Sorry, wow is not working time yet');
+            if (currentHour >= 18) console.log('Sorry, working day is over');
 
-        }
-        else if (currentDay == 'Sat' || currentDay == 'Sun') {
-            console.log('We are sorry, today is day off');
-        }
-        else {
-            console.log('Day is incorrect');
-        }
-    }
+        } else console.log('We are sorry, today is day off');
+    };
+};
 
-
-}
-
-const worker1 = new Worker('test', '2-3');
-worker1.isWorking()
+const worker1 = new Worker('test', '9:00-18:00');
+worker1.isWorking();
