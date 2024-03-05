@@ -3,6 +3,6 @@ const multiplyByIndexArr = numbers.map(multiplyByIndex);
 
 function multiplyByIndex(num) {
   return num * numbers.indexOf(num);
-};
+}
 
 console.log(multiplyByIndexArr);
