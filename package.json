@@ -3,5 +3,24 @@
     "chalk": "^5.3.0",
     "lodash": "^4.17.21"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "prettier": "3.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{html,css,less,ejs}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }

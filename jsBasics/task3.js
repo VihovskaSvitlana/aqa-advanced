@@ -2,9 +2,9 @@ let age = 18;
 let adult;
 
 if (age < 18) {
-    adult = false;
+  adult = false;
 } else {
-    adult = true;
-};
+  adult = true;
+}
 
 console.log(`A person who is ${age} years old is adult. It's ${adult}.`);
