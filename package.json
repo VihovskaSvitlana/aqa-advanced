@@ -24,5 +24,9 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "scripts": {
+    "cy:run:headed" : "npx cypress run -b chrome --headed --spec",
+    "cy:run:headless" : "npx cypress run -b chrome --headless --spec"
   }
 }

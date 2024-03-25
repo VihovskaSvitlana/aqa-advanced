@@ -10,8 +10,23 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
+Cypress.Commands.add('loginPromt', () => {
+  cy.visit('https://qauto.forstudy.space/panel/garage', {
+    failOnStatusCode: false,
+    auth: {
+      username: 'guest',
+      password: 'welcome2qauto',
+    },
+  });
+});
+
+Cypress.Commands.add('checkBorderColor', (input, color) => {
+  cy.get(input).should('have.css', 'border-color', color);
+});
+
+Cypress.Commands.add('hasAttDisabled', (input) => {
+    cy.get(input).should('have.attr', 'disabled');
+});
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
